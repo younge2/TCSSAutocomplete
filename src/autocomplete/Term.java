@@ -39,8 +39,12 @@ public class Term implements Comparable<Term> {
 			@Override
 			public int compare(Term o1, Term o2) {
 				if(r<0)throw new IllegalArgumentException();
-				 String thisR = o1.query.substring(0, pre);
-				 String thatR = o2.query.substring(0, pre);
+				int o1Last = pre;
+				int o2Last = pre;
+				if (o1.query.length()<pre) o1Last = o1.query.length();
+				if (o2.query.length()<pre) o2Last = o2.query.length();
+				 String thisR = o1.query.substring(0, o1Last);
+				 String thatR = o2.query.substring(0, o2Last);
 				 return thisR.compareToIgnoreCase(thatR);
 			}
 		 };
@@ -57,6 +61,10 @@ public class Term implements Comparable<Term> {
 	 }
 	 // unit testing (required)
 	 public static void main(String[] args){
+		 Term t1 = new Term("the", 55);
+		 Term t2 = new Term("at", 55);
+		 Term t3 = new Term("mm", 55);
+		 System.out.println(t1.compareTo(t3));
 		 
 	 }
 	}

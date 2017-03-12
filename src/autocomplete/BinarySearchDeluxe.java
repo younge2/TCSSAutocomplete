@@ -29,7 +29,7 @@ public class BinarySearchDeluxe {
 			
 			 int counter = 0;
 			 while (found<0){
-				 found = Arrays.binarySearch(a, a.length-1-counter, a.length-1,  key, comparator);
+				 found = Arrays.binarySearch(a, a.length-1-counter, a.length,  key, comparator);
 				 counter++;
 			 }
 			 
@@ -42,13 +42,13 @@ public class BinarySearchDeluxe {
 	 public static void main(String[] args){
 
 		 String [] test1 = {"1","1","2","2","3","44","44","5","5","6","7"};
-		 System.out.println("f"+firstIndexOf(test1,"5", new Comparator<String>(){
+		 System.out.println("f"+firstIndexOf(test1,"8", new Comparator<String>(){
 			 @Override
 			 public int compare(String s1, String s2){
 				 return s1.compareTo(s2);
 			 }
 		 }));
-		 System.out.println("l"+lastIndexOf(test1,"5", new Comparator<String>(){
+		 System.out.println("l"+lastIndexOf(test1,"8", new Comparator<String>(){
 			 @Override
 			 public int compare(String s1, String s2){
 				 return s1.compareTo(s2);
